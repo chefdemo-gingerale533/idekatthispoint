@@ -2,14 +2,13 @@ import sys
 import sqlite3
 import json
 from flask import Flask, request, jsonify
-from flask_threaded import ThreadedFlask
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton, QTextEdit, QLabel, QTableWidget, QTableWidgetItem
 )
 from PyQt5.QtCore import QThread
 
 # Flask Server
-app = ThreadedFlask(__name__)
+app = Flask(__name__)
 
 @app.route('/api/licenses', methods=['POST'])
 def add_license():
@@ -78,7 +77,7 @@ def init_db():
 class ServerThread(QThread):
     def run(self):
         init_db()
-        app.run(host='0.0.0.0', port=5000)
+        app.run(host='0.0.0.0', port=5000, threaded=True)
 
 # PyQt GUI
 class MainWindow(QMainWindow):
