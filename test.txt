@@ -1,0 +1,10 @@
+{
+    "RobloxUsername": "exampleRobloxUser",
+    "DiscordUsername": "example#1234",
+    "Items": [
+        { "Name": "Coke", "Price": 1.5 },
+        { "Name": "Burger", "Price": 5.0 }
+    ],
+    "Total": 6.5,
+    "PurchaseDate": "2025-05-11T00:00:00"
+}
